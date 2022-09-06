@@ -18,5 +18,9 @@ public class Main{
         test = elements.clone();
         System.out.println(Arrays.toString(Sort.InsertionSort(test)));
 
+        //Merge sorted
+        test = elements.clone();
+        System.out.println(Arrays.toString(Sort.MergeSort(test, 0, test.length -1)));
+
     }
 }
