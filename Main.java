@@ -22,5 +22,9 @@ public class Main{
         test = elements.clone();
         System.out.println(Arrays.toString(Sort.MergeSort(test, 0, test.length -1)));
 
+        //Quick sorted
+        test = elements.clone();
+        System.out.println(Arrays.toString(Sort.QuickSort(test, 0, test.length -1)));
+
     }
 }

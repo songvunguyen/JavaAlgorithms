@@ -58,6 +58,50 @@ public class Sort {
         return elements;
     }
 
+    //Quick Sort
+    public static int[] QuickSort(int[] elements, int low, int high){
+        if (low < high) {
+          
+            // pivot is partitioning index, elements[p]
+            // is now at right place 
+            int pivot = partition(elements, low, high);
+  
+            // Separately sort elements before
+            // partition and after partition
+            QuickSort(elements, low, pivot - 1);
+            QuickSort(elements, pivot + 1, high);
+        }
+
+        return elements;
+    }
+
+    // Helper function for Quick Sort that sorted subarray and return the pivot
+    private static int partition(int[] elements, int low, int high){
+      
+        // pivot
+        int pivot = elements[high]; 
+      
+        // Index of smaller element and
+        // indicates the right position
+        // of pivot found so far
+        int i = (low - 1); 
+  
+        for(int j = low; j <= high - 1; j++){
+          
+            // If current element is smaller 
+            // than the pivot
+            if (elements[j] < pivot) {
+              
+                // Increment index of 
+                // smaller element
+                i++; 
+                exch(elements, i, j);
+            }
+        }
+        exch(elements, i + 1, high);
+        return (i + 1);
+    }
+
     // Helper function for Merge Sort that merge two subarrays together inorder
     // https://www.geeksforgeeks.org/merge-sort/
     private static void merge(int elements[], int left, int middle, int right)
