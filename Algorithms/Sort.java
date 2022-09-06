@@ -25,6 +25,22 @@ public class Sort {
         return elements;
     }
 
+    //Insertion Sort
+    public static int[] InsertionSort(int[] elements){
+        int N = elements.length;
+        for (int i = 0; i < N; i++){
+            for (int j = i; j > 0; j--){
+                if (elements[j] < elements[j-1]){
+                    exch(elements, j, j-1);
+                }else{
+                    break;
+                } 
+            }
+        }
+        return elements;
+    }
+            
+
     //Helper functions for exchange two elements in the array
     private  static int[] exch(int[] a, int i, int j){
         int temp = 0;

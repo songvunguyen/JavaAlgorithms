@@ -8,8 +8,15 @@ public class Main{
         
         //Test different sort algorithms
         int[] elements = {3, 7, 1, 0, 9, 8, 5};
+        int[] test; //temporary array for testing sort functions
         
         //Selection sorted
-        System.out.print(Arrays.toString(Sort.SelectionSort(elements)));
+        test = elements.clone();
+        System.out.println(Arrays.toString(Sort.SelectionSort(test)));
+
+        //Insertion sorted
+        test = elements.clone();
+        System.out.println(Arrays.toString(Sort.InsertionSort(test)));
+
     }
 }
